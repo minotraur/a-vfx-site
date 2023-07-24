@@ -1,14 +1,12 @@
-<div class="wrapper">
-  <div class="content">
-    <nav class="menu container" #animObject>
-      <img src="assets/imgs/logo.png" alt="Logo" class="logo" />
-      <ul>
-        <li><a routerLink="/home">HOME</a></li>
-        <li><a routerLink="/works">WORKS</a></li>
-        <li><a routerLink="/contact">CONTACT</a></li>
-        <li><a routerLink="/about">ABOUT</a></li>
-      </ul>
-    </nav>
-    <router-outlet></router-outlet>
-  </div>
+<nav class="menu" #animObject>
+  <img src="assets/imgs/logo.png" alt="Logo" class="logo" />
+  <ul>
+    <li><a routerLink="/home">HOME</a></li>
+    <li><a routerLink="/works">WORKS</a></li>
+    <li><a routerLink="/contact">CONTACT</a></li>
+    <li><a routerLink="/about">ABOUT</a></li>
+  </ul>
+</nav>
+<div id="smooth-content">
+  <router-outlet></router-outlet>
 </div>

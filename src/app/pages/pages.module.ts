@@ -7,17 +7,14 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { WorksComponent } from './works/works.component';
 
-
 @NgModule({
   declarations: [
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    WorksComponent
+    WorksComponent,
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule
-  ]
+  imports: [CommonModule, PagesRoutingModule],
+  exports: [AboutComponent, ContactComponent, HomeComponent, WorksComponent],
 })
-export class PagesModule { }
+export class PagesModule {}

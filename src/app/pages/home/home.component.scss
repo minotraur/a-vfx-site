@@ -1,37 +1,96 @@
-.first {
-    background: #000;
+$index: calc(1vw + 1vh);
+$project-gap: calc($index * 7.5);
+
+.header {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  .video {
     height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  .slogan {
+    position: sticky;
+    color: white;
+    left: 120px;
+    bottom: 200px;
+    font-size: 5rem;
+    max-width: 900px;
+  }
+  .slogan > span {
+    color: #ffa500;
+  }
+}
+
+.works {
+  background: #0f0d0d;
+  height: max-content;
+  padding: 70px 120px;
+  &__h1 {
+    font-size: 10rem;
+    color: #363636;
+    letter-spacing: 0;
+    text-shadow: 12px 18px 15px rgba(0, 0, 0, 0.5);
+    padding-left: 70px;
+    font-weight: bold;
+  }
+  .projects {
     display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
+    padding: calc($index * 10) 0;
+
+    .project__item {
+      max-width: 500px;
+      margin-bottom: $project-gap;
+      max-height: 150vh;
+      border-radius: 10px;
+    }
+
+    .projects-left {
+      margin-top: calc($project-gap * 1.75);
+    }
+
+    .projects-right .project__item {
+      margin-bottom: 0;
+      margin-top: $project-gap;
+    }
+
+    .text-block {
+      color: white;
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+
+    .text-block__h {
+      color: white;
+      font-weight: 900;
+    }
+
+    .text-block__p {
+      color: white;
+      font-weight: 100;
+      font-size: 1.75rem;
+      line-height: 1.75rem;
     }
   }
-  .second {
-    background: #fff;
-    height: 100vh;
+
+  .projects > * {
+    flex: 1;
     display: flex;
     align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #000;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+    flex-direction: column;
   }
-  .third {
-    background: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+
+.third {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  
+}

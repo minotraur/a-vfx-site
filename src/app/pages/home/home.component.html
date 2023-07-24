@@ -1,10 +1,63 @@
-<header class="header"></header>
-<section class="first">
-  <p class="info" #animeObject>First</p>
-</section>
+<header class="header">
+  <video
+    src="assets/video1.mp4"
+    class="video"
+    autoplay="autoplay"
+    loop="loop"
+    [muted]="'muted'"
+  ></video>
+  <p class="slogan">
+    Virtual worlds. Unlimited possibilities.
+    <span>VFX - the art of visual effects!</span>
+  </p>
+</header>
 
-<section class="second">
-  <p class="info">Second</p>
+<section class="works">
+  <h1 class="works__h1">Our Works</h1>
+  <div class="wrapper">
+    <div class="content">
+      <div class="container">
+        <main class="projects">
+          <div data-speed=".9" class="projects-left">
+            <img
+              class="project__item"
+              src="assets/imgs/project_img.jpg"
+              alt="Project Image"
+            />
+            <div class="text-block project__item">
+              <h2 class="text-block__h">Test</h2>
+              <p class="text-block__p">Description</p>
+            </div>
+            <img
+              class="project__item"
+              src="assets/imgs/project_img.jpg"
+              alt="Project Image"
+            />
+          </div>
+          <div data-speed="1.1" class="projects-right">
+            <div class="text-block project__item">
+              <h2 class="text-block__h">Test</h2>
+              <p class="text-block__p">Description</p>
+            </div>
+            <img
+              class="project__item"
+              src="assets/imgs/project_img.jpg"
+              alt="Project Image"
+            />
+            <div class="text-block project__item">
+              <h2 class="text-block__h">Test</h2>
+              <p class="text-block__p">Description</p>
+            </div>
+            <img
+              class="project__item"
+              src="assets/imgs/project_img.jpg"
+              alt="Project Image"
+            />
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="third">

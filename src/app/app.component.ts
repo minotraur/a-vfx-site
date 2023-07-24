@@ -8,20 +8,9 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { Draggable } from 'gsap/Draggable';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { TextPlugin } from 'gsap/TextPlugin';
 import ScrollSmoother from 'src/js/ScrollSmoother.min.js';
 
-gsap.registerPlugin(
-  ScrollTrigger,
-  ScrollToPlugin,
-  Draggable,
-  MotionPathPlugin,
-  TextPlugin,
-  ScrollSmoother
-);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 @Component({
   selector: 'app-root',
@@ -38,14 +27,15 @@ export class AppComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit() {
-    this.initialAnimations();
     this.initialScrollAnimations();
   }
 
   ngAfterViewInit() {
+    gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+    console.log('init app');
     this.smoother = ScrollSmoother.create({
-      wrapper: '.wrapper',
-      content: '.content',
+      content: '#smooth-content',
+      wrapper: 'app-root',
       smooth: 2,
     });
 
@@ -61,8 +51,6 @@ export class AppComponent implements OnInit {
       ScrollTrigger.refresh();
     }, 50);
   }
-
-  initialAnimations(): void {}
 
   initialScrollAnimations(): void {
     gsap.from(this.animationObject?.nativeElement, {
