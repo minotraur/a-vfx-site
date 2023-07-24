@@ -1,15 +1,14 @@
 <div class="wrapper">
   <div class="content">
-    <section class="first">
-      <p class="info" #animeObject>First</p>
-    </section>
-
-    <section class="second">
-      <p class="info">Second</p>
-    </section>
-
-    <section class="third">
-      <p class="info">Third</p>
-    </section>
+    <nav class="menu container" #animObject>
+      <img src="assets/imgs/logo.png" alt="Logo" class="logo" />
+      <ul>
+        <li><a routerLink="/home">HOME</a></li>
+        <li><a routerLink="/works">WORKS</a></li>
+        <li><a routerLink="/contact">CONTACT</a></li>
+        <li><a routerLink="/about">ABOUT</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
   smoother: any;
 
-  @ViewChild('animeObject', { static: true })
+  @ViewChild('animObject', { static: true })
   private animationObject!: ElementRef<HTMLDivElement>;
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -66,11 +66,10 @@ export class AppComponent implements OnInit {
 
   initialScrollAnimations(): void {
     gsap.from(this.animationObject?.nativeElement, {
-      duration: 0.5,
+      duration: 3,
       opacity: 0,
-      y: -20,
-      stagger: 0.2,
-      delay: 0.5,
+      stagger: 0.5,
+      delay: 0.3,
     });
   }
 }
