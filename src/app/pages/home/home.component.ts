@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     itemsL.forEach((item: any) =>
       gsap.fromTo(
         item,
-        { x: -50, opacity: 0 },
+        { x: -120, opacity: 0 },
         {
           opacity: 1,
           x: 0,
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
     itemsR.forEach((item: any) =>
       gsap.fromTo(
         item,
-        { x: 80, opacity: 0 },
+        { x: 120, opacity: 0 },
         {
           opacity: 1,
           x: 0,

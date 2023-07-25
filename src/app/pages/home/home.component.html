@@ -18,7 +18,7 @@
     <div class="content">
       <div class="container">
         <main class="projects">
-          <div data-speed=".8" class="projects-left">
+          <div class="projects-left">
             <div
               class="project__card"
               *ngFor="let project of projects; let i = index"
@@ -28,7 +28,7 @@
                 src="{{ project.image }}"
                 alt="Project Image"
               />
-              <a routerLink="/works"
+              <a routerLink="/works{{ project.id }}"
                 ><div *ngIf="i % 2 !== 0" class="overlay">
                   <div class="text-block">
                     <h2 class="text-block__h">{{ project.name }}</h2>
@@ -38,7 +38,7 @@
               >
             </div>
           </div>
-          <div data-speed="1" class="projects-right">
+          <div class="projects-right">
             <div
               class="project__card"
               *ngFor="let project of projects; let i = index"
@@ -67,4 +67,45 @@
 <section class="third">
   <p class="info">Third</p>
 </section>
-<footer class="footer"></footer>
+
+<footer class="footer">
+  <div class="footer__left">
+    <p class="text">
+      All alive things are asymmetrical, that is the concept of our studio! We
+      create live charaters and realistic visual effects.
+    </p>
+    <p class="text">INFO@A-VFX.COM</p>
+    <p class="text text-thin">
+      <span class="text">ASYMMETRIC A-VFX STUDIOS PHYSICAL ADDRESS:</span>
+      ELEKTROZAVODSKAYA 21, MOSCOW, 107023 PHYSICAL ADDRESS: ROTERMANNI TN 2 B7,
+      TALLINN, 10111 PHYSICAL ADDRESS: MADRID, SPAIN
+    </p>
+  </div>
+  <div class="footer__right">
+    <div class="socials text">
+      <p>FOLLOW US</p>
+      <img
+        class="socials__img"
+        src="assets/imgs/facebook_logo.png"
+        alt="Facebook Logo"
+      />
+      <img
+        class="socials__img"
+        src="assets/imgs/vimeo_logo.png"
+        alt="Vimeo Logo"
+      />
+      <img
+        class="socials__img"
+        src="assets/imgs/youtube_logo.png"
+        alt="Youtube Logo"
+      />
+      <img
+        class="socials__img"
+        src="assets/imgs/instagram_logo.png"
+        alt="Instagram Logo"
+      />
+    </div>
+    <img src="assets/imgs/logo.png" alt="" />
+    <p class="copyright text text-thin">COPYRIGHT</p>
+  </div>
+</footer>
