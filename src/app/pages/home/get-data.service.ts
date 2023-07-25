@@ -7,8 +7,6 @@ export interface Project {
   image: string;
 }
 
-// mock-projects.ts
-
 export const MOCK_PROJECTS: Project[] = [
   {
     id: 1,

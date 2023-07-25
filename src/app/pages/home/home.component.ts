@@ -1,13 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { GetDataService, Project } from './get-data.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
@@ -19,15 +14,11 @@ gsap.registerPlugin(ScrollTrigger);
 export class HomeComponent implements OnInit {
   projects!: Project[];
 
-  // @ViewChild('animH', { static: true })
-  // private animationObject!: ElementRef<HTMLDivElement>;
-
   constructor(private projectService: GetDataService) {}
 
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.
     this.projects = this.projectService.getProjects();
-    this.initialScrollAnimations();
   }
 
   ngAfterViewInit() {
@@ -94,6 +85,4 @@ export class HomeComponent implements OnInit {
       )
     );
   }
-
-  initialScrollAnimations() {}
 }
