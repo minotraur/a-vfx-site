@@ -4,9 +4,7 @@ export interface Project {
   id: number;
   name: string;
   description: string;
-  startDate: string; // You can use Date type if needed
-  endDate: string; // You can use Date type if needed
-  status: string; // 'Planned', 'In Progress', 'Completed', etc.
+  image: string;
 }
 
 // mock-projects.ts
@@ -14,27 +12,57 @@ export interface Project {
 export const MOCK_PROJECTS: Project[] = [
   {
     id: 1,
-    name: 'Project A',
-    description: 'This is the description of Project A',
-    startDate: '2023-01-01',
-    endDate: '2023-03-31',
-    status: 'Completed',
+    name: 'Союз',
+    description: 'Союз спасения',
+    image: 'assets/imgs/souz.jpg',
   },
   {
     id: 2,
-    name: 'Project B',
-    description: 'This is the description of Project B',
-    startDate: '2023-02-15',
-    endDate: '2023-06-30',
-    status: 'In Progress',
+    name: 'Robo',
+    description: 'Robo',
+    image: 'assets/imgs/robo.jpg',
   },
   {
     id: 3,
-    name: 'Project C',
-    description: 'This is the description of Project C',
-    startDate: '2023-04-10',
-    endDate: '2023-08-31',
-    status: 'Planned',
+    name: '2.0',
+    description: 'Film 2.0',
+    image: 'assets/imgs/2.jpg',
+  },
+  {
+    id: 4,
+    name: 'Elki 2',
+    description: 'Elki 2',
+    image: 'assets/imgs/elki.jpg',
+  },
+  {
+    id: 5,
+    name: 'Wonder world',
+    description: 'Wonder world',
+    image: 'assets/imgs/wonder.jpg',
+  },
+  {
+    id: 6,
+    name: 'Para from future',
+    description: 'Para from future',
+    image: 'assets/imgs/para.jpg',
+  },
+  {
+    id: 7,
+    name: 'Steel rain',
+    description: 'Steel rain',
+    image: 'assets/imgs/steel.jpg',
+  },
+  {
+    id: 8,
+    name: 'Masha and the Bear',
+    description: 'Masha and the Bear',
+    image: 'assets/imgs/masha.jpg',
+  },
+  {
+    id: 9,
+    name: 'Legend №17',
+    description: 'Legend №17',
+    image: 'assets/imgs/legend17.jpg',
   },
 ];
 

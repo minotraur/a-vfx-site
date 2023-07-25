@@ -6,7 +6,7 @@
     loop="loop"
     [muted]="'muted'"
   ></video>
-  <p class="slogan">
+  <p class="slogan" data-lag=".3">
     Virtual worlds. Unlimited possibilities.
     <span>VFX - the art of visual effects!</span>
   </p>
@@ -18,41 +18,45 @@
     <div class="content">
       <div class="container">
         <main class="projects">
-          <div data-speed=".9" class="projects-left">
-            <img
-              class="project__item"
-              src="assets/imgs/project_img.jpg"
-              alt="Project Image"
-            />
-            <div class="text-block project__item">
-              <h2 class="text-block__h">Test</h2>
-              <p class="text-block__p">Description</p>
+          <div data-speed=".8" class="projects-left">
+            <div
+              class="project__card"
+              *ngFor="let project of projects; let i = index"
+            >
+              <img
+                *ngIf="i % 2 !== 0"
+                src="{{ project.image }}"
+                alt="Project Image"
+              />
+              <a routerLink="/works"
+                ><div *ngIf="i % 2 !== 0" class="overlay">
+                  <div class="text-block">
+                    <h2 class="text-block__h">{{ project.name }}</h2>
+                    <p class="text-block__p">{{ project.name }}</p>
+                  </div>
+                </div></a
+              >
             </div>
-            <img
-              class="project__item"
-              src="assets/imgs/project_img.jpg"
-              alt="Project Image"
-            />
           </div>
-          <div data-speed="1.1" class="projects-right">
-            <div class="text-block project__item">
-              <h2 class="text-block__h">Test</h2>
-              <p class="text-block__p">Description</p>
+          <div data-speed="1" class="projects-right">
+            <div
+              class="project__card"
+              *ngFor="let project of projects; let i = index"
+            >
+              <img
+                *ngIf="i % 2 == 0"
+                src="{{ project.image }}"
+                alt="Project Image"
+              />
+              <a routerLink="/works/{{ project.id }}"
+                ><div *ngIf="i % 2 == 0" class="overlay">
+                  <div class="text-block">
+                    <h2 class="text-block__h">{{ project.name }}</h2>
+                    <p class="text-block__p">{{ project.name }}</p>
+                  </div>
+                </div></a
+              >
             </div>
-            <img
-              class="project__item"
-              src="assets/imgs/project_img.jpg"
-              alt="Project Image"
-            />
-            <div class="text-block project__item">
-              <h2 class="text-block__h">Test</h2>
-              <p class="text-block__p">Description</p>
-            </div>
-            <img
-              class="project__item"
-              src="assets/imgs/project_img.jpg"
-              alt="Project Image"
-            />
           </div>
         </main>
       </div>
