@@ -34,13 +34,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private projectService: GetDataService,
     @Inject(DOCUMENT) private document: Document
-  ) {
-    // document.addEventListener('mousemove', (e) => {
-    //   Object.assign(document.documentElement, {
-    //     style: `--move-x: ${e.clientX}px; --move-y: ${e.clientY}px;`,
-    //   });
-    // });
-  }
+  ) {}
 
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.

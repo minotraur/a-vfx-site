@@ -10,8 +10,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollSmoother from 'src/js/ScrollSmoother.min.js';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,24 +30,11 @@ export class AppComponent implements OnInit {
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-    console.log('init app');
     this.smoother = ScrollSmoother.create({
       content: '#smooth-content',
       wrapper: 'app-root',
       smooth: 2,
     });
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      console.log('initial body inline styles:', document.body.style.cssText);
-    });
-    setTimeout(() => {
-      this.smoother.effects('[data-speed], [data-lag]');
-      console.log(
-        'after creating effects, body inline styles:',
-        document.body.style.cssText
-      );
-      ScrollTrigger.refresh();
-    }, 50);
   }
 
   initialScrollAnimations(): void {
