@@ -1,7 +1,15 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  HostListener,
+  Inject,
+  OnInit,
+} from '@angular/core';
 import { GetDataService, Project } from './get-data.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { DOCUMENT } from '@angular/common';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +22,25 @@ gsap.registerPlugin(ScrollTrigger);
 export class HomeComponent implements OnInit {
   projects!: Project[];
 
-  constructor(private projectService: GetDataService) {}
+  @HostBinding('style.--mouseX') mouseX = '0';
+  @HostBinding('style.--mouseY') mouseY = '0';
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    this.mouseX = `${event.clientX}px`;
+    this.mouseY = `${event.clientY}px`;
+  }
+
+  constructor(
+    private projectService: GetDataService,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    // document.addEventListener('mousemove', (e) => {
+    //   Object.assign(document.documentElement, {
+    //     style: `--move-x: ${e.clientX}px; --move-y: ${e.clientY}px;`,
+    //   });
+    // });
+  }
 
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.
@@ -46,6 +72,19 @@ export class HomeComponent implements OnInit {
           trigger: '.works__h1',
           start: '-100',
           end: '1000',
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.abilities .abilities__h',
+      { x: 500, opacity: 0 },
+      {
+        opacity: 1,
+        x: 120,
+        scrollTrigger: {
+          trigger: '.abilities__h',
           scrub: true,
         },
       }

@@ -1,3 +1,5 @@
+$index: calc(1vw + 1vh);
+
 .menu {
   position: absolute;
   top: 0;
@@ -8,7 +10,7 @@
   justify-content: space-around;
   z-index: 100;
   .logo {
-    height: 70px;
+    height: calc($index * 2.5);
   }
 
   ul {
@@ -16,7 +18,7 @@
     display: flex;
     text-justify: auto;
     align-items: center;
-    font-size: 1.5em;
+    font-size: calc($index * 0.9);
     padding: 0;
     margin: 0;
     li {
