@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
       {
         opacity: 1,
         x: 0,
+        delay: 5,
         scrollTrigger: {
           trigger: '.works__h1',
           start: '-100',
@@ -77,8 +78,35 @@ export class HomeComponent implements OnInit {
       {
         opacity: 1,
         x: 120,
+        delay: 5,
         scrollTrigger: {
           trigger: '.abilities__h',
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.team .team__h',
+      { x: 500, opacity: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: '.team__h',
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      '.partners .partners__h',
+      { x: 500, opacity: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: '.partners__h',
           scrub: true,
         },
       }
@@ -93,6 +121,7 @@ export class HomeComponent implements OnInit {
         {
           opacity: 1,
           x: 0,
+
           scrollTrigger: {
             trigger: item,
             scrub: true,

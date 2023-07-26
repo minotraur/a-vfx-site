@@ -41,7 +41,7 @@ $cursor-transform: translate3d(calc(--move-x / -5), calc(--move-y / -5), 0);
     letter-spacing: 0;
     text-shadow: 12px 18px 15px rgba(0, 0, 0, 0.5);
     padding-left: 70px;
-    font-weight: bold;
+    font-weight: bolder;
   }
   .projects {
     display: flex;
@@ -120,7 +120,7 @@ $cursor-transform: translate3d(calc(--move-x / -5), calc(--move-y / -5), 0);
     letter-spacing: 0;
     text-shadow: 12px 18px 15px rgba(0, 0, 0, 0.5);
     padding-left: 70px;
-    font-weight: bold;
+    font-weight: bolder;
   }
 
   .abilities-list {
@@ -182,6 +182,105 @@ $cursor-transform: translate3d(calc(--move-x / -5), calc(--move-y / -5), 0);
       transition: transform $transition;
       will-change: transform;
     }
+  }
+}
+
+.team {
+  background: #0f0d0d;
+  height: max-content;
+  padding: 70px 120px;
+
+  .team__h {
+    font-size: 10rem;
+    color: #363636;
+    letter-spacing: 0;
+    text-shadow: 12px 18px 15px rgba(0, 0, 0, 0.5);
+    padding-left: 70px;
+    font-weight: bolder;
+  }
+
+  .team-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 70px;
+  }
+
+  .teammate-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    .teammate__name {
+      font-size: 130px;
+      color: #ffffff;
+      font-weight: bolder;
+    }
+
+    .teammate__role {
+      font-size: 100px;
+      color: #ffbd78;
+      font-weight: bold;
+    }
+
+    .teammate__socials .img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-right: 15px;
+    }
+  }
+
+  .no-left-margin {
+    margin-left: 0;
+  }
+
+  .right-margin {
+    margin-right: 50px;
+  }
+
+  .teammate-right-text {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 120px;
+    .teammate__img img {
+      width: 550px;
+      height: 700px;
+      border: 1px solid #979797;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+
+  .teammate-left-text {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 120px;
+    .teammate__img img {
+      width: 550px;
+      height: 700px;
+      border: 1px solid #979797;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+}
+
+.partners {
+  background: #0f0d0d;
+  height: max-content;
+  padding: 70px 120px;
+
+  .partners__h {
+    font-size: calc($index * 6);
+    color: #363636;
+    letter-spacing: 0;
+    text-shadow: 12px 18px 15px rgba(0, 0, 0, 0.5);
+    padding-left: 70px;
+    font-weight: bolder;
   }
 }
 
