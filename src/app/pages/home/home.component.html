@@ -28,7 +28,7 @@
                 src="{{ project.image }}"
                 alt="Project Image"
               />
-              <a routerLink="/works{{ project.id }}"
+              <a routerLink="/works/{{ project.id }}"
                 ><div *ngIf="i % 2 !== 0" class="overlay">
                   <div class="text-block">
                     <h2 class="text-block__h">{{ project.name }}</h2>
