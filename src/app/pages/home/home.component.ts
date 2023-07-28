@@ -10,6 +10,7 @@ import { GetDataService, Project } from './get-data.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DOCUMENT } from '@angular/common';
+import { routingAnimation } from 'src/app/animations/routing-animation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,8 +19,11 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [routingAnimation],
 })
 export class HomeComponent implements OnInit {
+  @HostBinding('@routingAnimation') private routing: any;
+
   projects!: Project[];
 
   @HostBinding('style.--mouseX') mouseX = '0';

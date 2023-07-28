@@ -1,73 +1,76 @@
+:host {
+  display: block;
+}
+
 .first {
-    background: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+  background: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  .second {
-    background: #fff;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #000;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+.second {
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #000;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  .third {
-    background: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+.third {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  .first {
-    background: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+.first {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  .second {
-    background: #fff;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #000;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+.second {
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #000;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  .third {
-    background: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .info {
-      font-size: 4rem;
-      color: #fff;
-      margin: 0 auto;
-      font-weight: bold;
-    }
+}
+.third {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .info {
+    font-size: 4rem;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
   }
-  
+}

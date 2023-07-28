@@ -9,6 +9,10 @@ $height: calc($index * 14);
 
 $cursor-transform: translate3d(calc(--move-x / -5), calc(--move-y / -5), 0);
 
+:host {
+  display: block;
+}
+
 .header {
   background: #000;
   height: 100vh;
