@@ -5,15 +5,25 @@
     [config]="slickCarouselConfig"
   >
     <div ngxSlickItem *ngFor="let video of videos" class="slide">
-      <h2 ngxSlickItem class="h2">{{ video.text }}</h2>
-      <video
-        class="video"
-        [src]="video.url"
-        autoplay="autoplay"
-        loop="loop"
-        [muted]="'muted'"
-        muted
-      ></video>
+      <div class="slide-content">
+        <div class="slide-content__textblock">
+          <h2 class="textblock__h">{{ video.text }}</h2>
+          <p class="textblock__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            tempora ipsum dolor ratione aut illum sequi delectus labore
+            deserunt, alias minus commodi, laborum esse quia repudiandae hic
+            nemo, natus at!
+          </p>
+        </div>
+        <video
+          class="video"
+          [src]="video.url"
+          autoplay="autoplay"
+          loop="loop"
+          [muted]="'muted'"
+          muted
+        ></video>
+      </div>
     </div>
   </ngx-slick-carousel>
 </header>

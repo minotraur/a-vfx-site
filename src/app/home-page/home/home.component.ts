@@ -10,24 +10,23 @@ import {
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DOCUMENT } from '@angular/common';
-import { routingAnimation } from 'src/app/animations/routing-animation';
-import { GetDataService, Project } from 'src/app/works-page/get-data.service';
+import { GetDataService, Project } from 'src/app/home-page/get-data.service';
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  @HostBinding('@routingAnimation') private routing: any;
+
   videos = [
     // { url: 'assets/videos/1.mp4', text: 'TEXT 1' },
-    { url: 'assets/videos/2.mp4', text: 'TEXT 2' },
-    { url: 'assets/videos/3.mp4', text: 'TEXT 3' },
-    { url: 'assets/videos/4.mp4', text: 'TEXT 4' },
-    { url: 'assets/videos/5.mp4', text: 'TEXT 5' },
-    { url: 'assets/videos/6.mp4', text: 'TEXT 6' },
+    { url: 'assets/videos/2.mp4', text: 'Дракон' },
+    { url: 'assets/videos/3.mp4', text: 'Черновик' },
+    { url: 'assets/videos/4.mp4', text: 'Робо' },
+    { url: 'assets/videos/5.mp4', text: 'Квакерсы' },
+    { url: 'assets/videos/6.mp4', text: 'Кровавый хоккей' },
     // Добавьте дополнительные видео, указав их URL
   ];
 
@@ -42,26 +41,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     fullscreen: true,
   };
 
-  @HostBinding('@routingAnimation') private routing: any;
-
   projects!: Project[];
-
-  @HostBinding('style.--mouseX') mouseX = '0';
-  @HostBinding('style.--mouseY') mouseY = '0';
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    this.mouseX = `${event.clientX}px`;
-    this.mouseY = `${event.clientY}px`;
-  }
 
   constructor(
     private projectService: GetDataService,
     @Inject(DOCUMENT) private document: Document
   ) {}
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.
@@ -69,13 +54,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
-      '.header .slogan',
+      '.slide-content .slide-content__textblock',
       { opacity: 1 },
       {
         opacity: 0,
         scrollTrigger: {
-          trigger: '.slogan',
+          trigger: '.slide-content__textblock',
           start: '100',
           end: '820',
           scrub: true,
@@ -174,4 +160,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       )
     );
   }
+
+  ngOnDestroy(): void {}
 }

@@ -1,17 +1,48 @@
+$index: calc(1vw + 1vh);
+$project-gap: calc($index * 5);
+$text-color-orange: #ffa500;
+$transition: 1.25s cubic-bezier(0.2, 0.5, 0, 1);
+$transition-cursor: 2s cubic-bezier(0.05, 0.5, 0, 1);
+
 .header {
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   height: 100vh;
 
   .carousel {
     .slide {
-      .h2 {
-        position: absolute;
-        top: 750px;
-        margin: 70px;
-        font-size: 40px;
-        color: white;
-        font-weight: 900;
+      .slide-content {
+        position: relative;
+
+        .slide-content__textblock {
+          position: absolute;
+          width: calc($index * 15);
+          height: calc($index * 10);
+          background-color: #fff;
+          bottom: calc($index * 2);
+          left: calc($index * 2);
+          z-index: 1;
+          color: black;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 40px;
+          .textblock__h {
+            font-weight: 900;
+            font-size: calc($index * 1.5);
+            margin: 0;
+            text-align: center;
+            margin: 0;
+          }
+
+          .textblock__desc {
+            margin: 0;
+            margin-top: 15px;
+            font-weight: 100;
+          }
+        }
       }
+
       .video {
         width: 100vw;
         height: 100vh;
@@ -19,20 +50,6 @@
       }
     }
   }
-}
-$index: calc(1vw + 1vh);
-$project-gap: calc($index * 5);
-$text-color-orange: #ffa500;
-$transition: 1.25s cubic-bezier(0.2, 0.5, 0, 1);
-$transition-cursor: 2s cubic-bezier(0.05, 0.5, 0, 1);
-
-$width: calc($index * 22);
-$height: calc($index * 14);
-
-$cursor-transform: translate3d(calc(--move-x / -5), calc(--move-y / -5), 0);
-
-:host {
-  display: block;
 }
 
 .works {
