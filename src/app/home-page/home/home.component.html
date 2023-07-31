@@ -1,0 +1,305 @@
+<header class="header">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slickCarouselConfig"
+  >
+    <div ngxSlickItem *ngFor="let video of videos" class="slide">
+      <h2 ngxSlickItem class="h2">{{ video.text }}</h2>
+      <video
+        class="video"
+        [src]="video.url"
+        autoplay="autoplay"
+        loop="loop"
+        [muted]="'muted'"
+        muted
+      ></video>
+    </div>
+  </ngx-slick-carousel>
+</header>
+<section class="works">
+  <h1 class="works__h1">Our Works</h1>
+  <div class="wrapper">
+    <div class="content">
+      <div class="container">
+        <main class="projects">
+          <div class="projects-left">
+            <div
+              class="project__card"
+              *ngFor="let project of projects; let i = index"
+            >
+              <img
+                *ngIf="i % 2 !== 0"
+                src="{{ project.image }}"
+                alt="Project Image"
+              />
+              <a routerLink="/works/{{ project.id }}"
+                ><div *ngIf="i % 2 !== 0" class="overlay">
+                  <div class="text-block">
+                    <h2 class="text-block__h">{{ project.name }}</h2>
+                    <p class="text-block__p">{{ project.name }}</p>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+          <div class="projects-right">
+            <div
+              class="project__card"
+              *ngFor="let project of projects; let i = index"
+            >
+              <img
+                *ngIf="i % 2 == 0"
+                src="{{ project.image }}"
+                alt="Project Image"
+              />
+              <a routerLink="/works/{{ project.id }}"
+                ><div *ngIf="i % 2 == 0" class="overlay">
+                  <div class="text-block">
+                    <h2 class="text-block__h">{{ project.name }}</h2>
+                    <p class="text-block__p">{{ project.name }}</p>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abilities">
+  <h2 class="abilities__h">WE CAN</h2>
+
+  <div class="abilities-list">
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">VFX</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(assets/imgs/2.jpg)"
+        ></div>
+      </div>
+    </a>
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">Animation</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(assets/imgs/para.jpg)"
+        ></div>
+      </div>
+    </a>
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">Motion Graphics</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(img/3.jpg)"
+        ></div>
+      </div>
+    </a>
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">Vizualization</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(img/4.jpg)"
+        ></div>
+      </div>
+    </a>
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">Virtual Assets Production</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(img/5.jpg)"
+        ></div>
+      </div>
+    </a>
+    <a href="#" class="abilities-list__item">
+      <div class="abilities-list__header">Art Department</div>
+      <div class="cursor">
+        <div
+          class="cursor__image"
+          style="background-image: url(img/5.jpg)"
+        ></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="team">
+  <h2 class="team__h">OUR TEAM</h2>
+  <div class="team-wrapper">
+    <div class="teammate-right-text">
+      <div class="teammate__img">
+        <img src="assets/imgs/man.jpg" alt="A man" />
+      </div>
+      <div class="teammate-text">
+        <div class="teammate__name">Oea Romana</div>
+        <div class="teammate__role">Artist</div>
+        <div class="teammate__socials">
+          <img
+            class="img"
+            src="assets/imgs/facebook_logo.png"
+            alt="Facebook logo"
+          />
+          <img
+            class="img"
+            src="assets/imgs/instagram_logo.png"
+            alt="Instagram logo"
+          />
+          <img class="img" src="assets/imgs/vimeo_logo.png" alt="Vimeo logo" />
+        </div>
+      </div>
+    </div>
+    <div class="teammate-left-text">
+      <div class="teammate-text no-left-margin right-margin">
+        <div class="teammate__name">Oea Romana</div>
+        <div class="teammate__role">Artist</div>
+        <div class="teammate__socials">
+          <a href="">
+            <img
+              class="img"
+              src="assets/imgs/facebook_logo.png"
+              alt="Facebook logo"
+            />
+          </a>
+          <a href=""
+            ><img
+              class="img"
+              src="assets/imgs/instagram_logo.png"
+              alt="Instagram logo"
+          /></a>
+          <a href="">
+            <img
+              class="img"
+              src="assets/imgs/vimeo_logo.png"
+              alt="Vimeo logo"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="teammate__img">
+        <img src="assets/imgs/man.jpg" alt="A man" />
+      </div>
+    </div>
+    <div class="teammate-right-text">
+      <div class="teammate__img">
+        <img src="assets/imgs/man.jpg" alt="A man" />
+      </div>
+      <div class="teammate-text">
+        <div class="teammate__name">Oea Romana</div>
+        <div class="teammate__role">Artist</div>
+        <div class="teammate__socials">
+          <img
+            class="img"
+            src="assets/imgs/facebook_logo.png"
+            alt="Facebook logo"
+          />
+          <img
+            class="img"
+            src="assets/imgs/instagram_logo.png"
+            alt="Instagram logo"
+          />
+          <img class="img" src="assets/imgs/vimeo_logo.png" alt="Vimeo logo" />
+        </div>
+      </div>
+    </div>
+    <div class="teammate-left-text">
+      <div class="teammate-text no-left-margin right-margin">
+        <div class="teammate__name">Oea Romana</div>
+        <div class="teammate__role">Artist</div>
+        <div class="teammate__socials">
+          <a href="">
+            <img
+              class="img"
+              src="assets/imgs/facebook_logo.png"
+              alt="Facebook logo"
+            />
+          </a>
+          <a href=""
+            ><img
+              class="img"
+              src="assets/imgs/instagram_logo.png"
+              alt="Instagram logo"
+          /></a>
+          <a href="">
+            <img
+              class="img"
+              src="assets/imgs/vimeo_logo.png"
+              alt="Vimeo logo"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="teammate__img">
+        <img src="assets/imgs/man.jpg" alt="A man" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <h2 class="partners__h">PARTNERS</h2>
+  <div class="wrapper">
+    <img src="" alt="Mac" />
+    <img src="" alt="Honda" />
+    <img src="" alt="Google" />
+    <img src="" alt="Burger" />
+    <img src="" alt="Kodak" />
+    <img src="" alt="Pringles" />
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__left">
+    <p class="text">
+      All alive things are asymmetrical, that is the concept of our studio! We
+      create live charaters and realistic visual effects.
+    </p>
+    <p class="text">INFO@A-VFX.COM</p>
+    <p class="text text-thin">
+      <span class="text">ASYMMETRIC A-VFX STUDIOS PHYSICAL ADDRESS:</span>
+      ELEKTROZAVODSKAYA 21, MOSCOW, 107023 PHYSICAL ADDRESS: ROTERMANNI TN 2 B7,
+      TALLINN, 10111 PHYSICAL ADDRESS: MADRID, SPAIN
+    </p>
+  </div>
+  <div class="footer__right">
+    <div class="socials text">
+      <p>FOLLOW US</p>
+
+      <a href="https://www.facebook.com/asymmetric.vfx/" target="_blank"
+        ><img
+          class="socials__img"
+          src="assets/imgs/facebook_logo.png"
+          alt="Facebook Logo"
+      /></a>
+      <a href="https://vimeo.com/asymmetricvfx" target="_blank"
+        ><img
+          class="socials__img"
+          src="assets/imgs/vimeo_logo.png"
+          alt="Vimeo Logo"
+      /></a>
+      <a
+        href="https://www.youtube.com/channel/UCbIZ0fTUKQiQJW92j0b8_TQ/videos?view_as=subscriber"
+        target="_blank"
+      >
+        <img
+          class="socials__img"
+          src="assets/imgs/youtube_logo.png"
+          alt="Youtube Logo"
+      /></a>
+      <a href="https://www.instagram.com/asymmetric_vfx/" target="_blank"
+        ><img
+          class="socials__img"
+          src="assets/imgs/instagram_logo.png"
+          alt="Instagram Logo"
+      /></a>
+    </div>
+    <img src="assets/imgs/logo.png" alt="" />
+    <p class="copyright text text-thin">COPYRIGHT</p>
+  </div>
+</footer>

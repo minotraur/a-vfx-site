@@ -15,7 +15,7 @@ import ScrollSmoother from 'src/js/ScrollSmoother.min.js';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'A-VFX';
 
   smoother: any;

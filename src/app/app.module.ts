@@ -3,20 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
-import { PagesModule } from './pages/pages.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomePageModule } from './home-page/home-page.module';
+import { WorksPageModule } from './works-page/works-page.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    GraphQLModule,
-    HttpClientModule,
-    PagesModule,
-  ],
+  declarations: [AppComponent, NavbarComponent],
+  imports: [BrowserModule, AppRoutingModule, SlickCarouselModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [HomePageModule, WorksPageModule],
 })
 export class AppModule {}
