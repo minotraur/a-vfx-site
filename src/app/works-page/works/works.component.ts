@@ -8,11 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class WorksComponent implements OnInit, OnDestroy {
   constructor() {}
 
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnDestroy(): void {}
 }
