@@ -1,44 +1,43 @@
 <header>
-    <div class="mainMenu">
-      <div class="container">
-        <div class="row">
-          <nav class="mainMenu__bar">
-            <div class="mainMenu__logo">
-              <a href=""
-                ><img
-                  src="assets/imgs/logo.png"
-                  alt="Asymmetric logo"
-                  height="40"
-              /></a>
+  <div class="mainMenu">
+    <div class="container">
+      <div class="row">
+        <nav class="mainMenu__bar">
+          <div class="mainMenu__logo">
+            <a routerLink=""
+              ><img
+                src="assets/imgs/logo.png"
+                alt="Asymmetric logo"
+                height="40"
+            /></a>
+          </div>
+          <div
+            class="mainMenu__content container"
+            [ngClass]="{ openNavBar: isNavBarOpen, active: isNavBarOpen }"
+          >
+            <div class="mainMenu__menu">
+              <ul class="menu">
+                <li class="menu__item">
+                  <a routerLink="">Home</a>
+                </li>
+                <li class="menu__item">
+                  <a routerLink="/works">Works</a>
+                </li>
+                <li class="menu__item">
+                  <a routerLink="/about">About us</a>
+                </li>
+                <li class="menu__item">
+                  <a routerLink="/contact">Contact</a>
+                </li>
+              </ul>
             </div>
-            <div
-              class="mainMenu__content container"
-              [ngClass]="{ openNavBar: isNavBarOpen, active: isNavBarOpen }"
-            >
-              <div class="mainMenu__menu">
-                <ul class="menu">
-                  <li class="menu__item">
-                    <a href="">Home</a>
-                  </li>
-                  <li class="menu__item">
-                    <a href="/works">Works</a>
-                  </li>
-                  <li class="menu__item">
-                    <a href="/about">About us</a>
-                  </li>
-                  <li class="menu__item">
-                    <a href="/contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-  
-            <div class="mainMenu__hamburger" (click)="toggleNavBar()">
-              <i class="ri-menu-3-line"></i>
-            </div>
-          </nav>
-        </div>
+          </div>
+
+          <div class="mainMenu__hamburger" (click)="toggleNavBar()">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </nav>
       </div>
     </div>
-  </header>
-  
+  </div>
+</header>
