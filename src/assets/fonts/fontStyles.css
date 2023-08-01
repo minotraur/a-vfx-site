@@ -1,0 +1,143 @@
+/* Belarus */
+
+@font-face {
+  font-family: "Belarus";
+  src: url("Belarus/Belarus-Regular.ttf") format("truetype");
+}
+
+/* OoM */
+
+@font-face {
+  font-family: "OoM";
+  src: url("OoM/Cakra-Normal.woff2") format("woff2");
+}
+
+/* Nebulas */
+
+@font-face {
+  font-family: "Nebulas-reg";
+
+  src: url("Nebulas/Nebulas-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Nebulas";
+  font-weight: 500;
+  src: url("Nebulas/Nebulas-Medium.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Nebulas";
+  font-weight: 600;
+  src: url("Nebulas/Nebulas-SemiBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Nebulas";
+  font-weight: 700;
+  src: url("Nebulas/Nebulas-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Nebulas";
+  font-weight: 800;
+  src: url("Nebulas/Nebulas-ExtraBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Nebulas";
+  font-weight: 900;
+  src: url("Nebulas/Nebulas-Black.otf") format("otf");
+}
+
+/* Cabinet Grotesk */
+
+@font-face {
+  font-family: "CabinetGrotesk-Variable";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Variable.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Variable.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Thin";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Thin.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Thin.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Extralight";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Extralight.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Extralight.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Light";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Light.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Light.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Regular";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Regular.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Regular.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Medium";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Medium.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Medium.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Bold";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Bold.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Bold.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Extrabold";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Extrabold.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Extrabold.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk-Black";
+  src: url("Cabinet-Grotesk/CabinetGrotesk-Black.woff2") format("woff2"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Black.woff") format("woff"),
+    url("Cabinet-Grotesk/CabinetGrotesk-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
