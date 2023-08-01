@@ -97,7 +97,6 @@ header {
             width: 2px;
             background: rgba($color: white, $alpha: 0.5);
             border-radius: 2px;
-            // margin: 0 15px 0 0;
           }
         }
       }
@@ -119,19 +118,21 @@ header {
 
 @media screen and (max-width: 1000px) {
   .mainMenu {
+    z-index: 100;
     .mainMenu__content {
-      display: none !important;
+      visibility: hidden;
       position: absolute;
-      top: 284%;
       left: 50%;
       opacity: 0;
       transform: translate(-50%, -50%);
-      background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+      background-image: linear-gradient(to right, #283d5a 0%, #1b2d46 100%);
       border-radius: 40px;
       justify-content: center;
       flex-direction: column;
       z-index: -1;
       border-radius: 30px;
+      top: 210px;
+      transition: 0.3s;
 
       .mainMenu__menu {
         margin-right: 0 !important;
@@ -139,20 +140,29 @@ header {
       }
       .menu {
         flex-direction: column;
-        row-gap: 40px;
+        row-gap: 20px;
 
         .menu__item:last-child {
           padding-bottom: 20px;
+        }
+
+        .menu__spacer {
+          height: 1px !important;
+          width: 150px !important;
+          background: rgba($color: white, $alpha: 0.5);
+          border-radius: 2px;
         }
       }
     }
 
     .mainMenu__content.openNavBar {
-      display: flex !important;
+      visibility: unset;
       opacity: 1 !important;
-      margin-top: 60px;
+      top: 210px;
+      transition: 0.3s;
     }
   }
+
   .mainMenu__bar {
     justify-content: space-between;
   }
