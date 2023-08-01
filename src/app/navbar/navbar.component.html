@@ -4,12 +4,13 @@
       <div class="row">
         <nav class="mainMenu__bar">
           <div class="mainMenu__logo">
-            <a routerLink=""
-              ><img
+            <a routerLink="">
+              <img
                 src="assets/imgs/logo.png"
                 alt="Asymmetric logo"
                 height="40"
-            /></a>
+              />
+            </a>
           </div>
           <div
             class="mainMenu__content container"
@@ -18,28 +19,45 @@
             <div class="mainMenu__menu">
               <ul class="menu">
                 <li class="menu__item">
-                  <a routerLink="">Home</a>
+                  <a routerLink="/about" routerLinkActive="active">О студии</a>
                 </li>
+                <div class="menu__spacer"></div>
+
                 <li class="menu__item">
-                  <a routerLink="/works">Works</a>
+                  <a routerLink="/works" routerLinkActive="active">Работы</a>
                 </li>
+                <div class="menu__spacer"></div>
+
                 <li class="menu__item">
-                  <a routerLink="/about">About us</a>
+                  <a routerLink="/blog" routerLinkActive="active">Блог</a>
                 </li>
+                <div class="menu__spacer"></div>
+
                 <li class="menu__item">
-                  <a routerLink="/contact">Contact</a>
+                  <a routerLink="/contact" routerLinkActive="active"
+                    >Контакты</a
+                  >
                 </li>
+                <div class="menu__spacer"></div>
               </ul>
             </div>
             <div class="mainMenu__lang">
               <ul class="menu">
                 <li class="menu__item">
-                  <a href="https://a-vfx.com/en/" class="menu__item__a">
+                  <a
+                    href="https://a-vfx.com/en/"
+                    class="menu__item__a"
+                    routerLinkActive="active"
+                  >
                     <span class="menu__item__span">EN</span></a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="https://a-vfx.com/en/" class="menu__item__a">
+                  <a
+                    href="https://a-vfx.com/en/"
+                    class="menu__item__a"
+                    routerLinkActive="active"
+                  >
                     <span class="menu__item__span">RU</span></a
                   >
                 </li>

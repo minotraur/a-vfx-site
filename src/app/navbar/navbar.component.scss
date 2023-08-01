@@ -1,4 +1,5 @@
 $index: calc(1vw + 1vh);
+$text-color-orange: #f7941d;
 
 header {
   display: flex;
@@ -12,6 +13,11 @@ header {
     top: 30px;
     width: 100%;
 
+    .mainMenu__bar:hover {
+      filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 1));
+      transition: 0.3s;
+    }
+
     .mainMenu__bar {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -22,17 +28,17 @@ header {
       list-style: none;
       padding: 15px 20px;
       border-radius: 60px;
-      background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-      height: 60px;
-      box-shadow: 0.2px 2.3px 1.7px -20px rgba(0, 0, 0, 0.078),
-        0.5px 5.6px 4.2px -20px rgba(0, 0, 0, 0.119),
-        0.9px 10.5px 7.9px -20px rgba(0, 0, 0, 0.146),
-        1.6px 18.8px 14.1px -20px rgba(0, 0, 0, 0.17),
-        2.9px 35.1px 26.3px -20px rgba(0, 0, 0, 0.197),
-        7px 84px 63px -20px rgba(0, 0, 0, 0.26);
-
+      background-color: #dcd9d4;
+      background-color: #e4e4e1;
+      background-image: linear-gradient(to right, #283d5a 0%, #1b2d46 100%);
+      height: 50px;
+      filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+      transition: 0.3s;
       .mainMenu__logo {
         cursor: pointer;
+        a img {
+          filter: drop-shadow(2px 1px 3px rgba(0, 0, 0, 0.8));
+        }
       }
 
       .mainMenu__content {
@@ -58,20 +64,40 @@ header {
           padding: 0;
           margin: 0;
           justify-content: flex-end;
-          li {
+          .menu__item {
+            margin: 0 15px;
             a {
-              font-weight: 900;
-              font-size: 20px;
-              color: white;
-              margin-right: 15px;
+              position: relative;
+
+              font-size: 16px;
+              color: #dfdfdf;
               border: 1px solid transparent;
-              padding: 12px 24px;
+              padding: 5px 20px;
               border-radius: 80px;
               text-decoration: none;
+              font-family: "CabinetGrotesk-Variable", sans-serif;
+              transition: 0.3s;
+              font-weight: 700;
+              text-transform: uppercase;
             }
+
             a:hover {
-              border: 1px solid white;
+              border: 1px solid rgba($color: white, $alpha: 0.5);
+              transition: 0.3s;
             }
+
+            .active {
+              color: $text-color-orange;
+              transition: 0.3s;
+              font-weight: 800;
+            }
+          }
+          .menu__spacer {
+            height: 20px;
+            width: 2px;
+            background: rgba($color: white, $alpha: 0.5);
+            border-radius: 2px;
+            // margin: 0 15px 0 0;
           }
         }
       }
@@ -115,9 +141,6 @@ header {
         flex-direction: column;
         row-gap: 40px;
 
-        .menu__item a {
-          margin-right: 0 !important;
-        }
         .menu__item:last-child {
           padding-bottom: 20px;
         }
