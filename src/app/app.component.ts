@@ -33,7 +33,7 @@ export class AppComponent {
     this.smoother = ScrollSmoother.create({
       content: '#smooth-content',
       wrapper: 'app-root',
-      smooth: 2,
+      smooth: 1.1,
     });
   }
 

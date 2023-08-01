@@ -6,18 +6,15 @@
       [pagination]="{ clickable: true }"
       [loop]="true"
       [lazy]="true"
+      [autoplay]="{ delay: 5000 }"
+      [speed]="200"
     >
       <ng-template swiperSlide *ngFor="let video of videos"
         ><div class="slide-content">
           <div class="slide-content__textblock">
-            <h2 class="textblock__h">{{ video.text }}</h2>
-            <p class="textblock__desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-              tempora ipsum dolor ratione aut illum sequi delectus labore
-              deserunt, alias minus commodi, laborum esse quia repudiandae hic
-              nemo, natus at!
-            </p>
-            <a routerLink="/work/{{ video.link }}">Посмотреть</a>
+            <a routerLink="/work/{{ video.link }}" title="Посмотреть проект"
+              ><h2 class="textblock__h">{{ video.text }}</h2></a
+            >
           </div>
           <video
             class="video"
@@ -32,11 +29,15 @@
   </div>
 </header>
 
-<!-- <section class="works">
-  <h1 class="works__h1">Наши работы</h1>
+<section class="works">
+  <div class="back__circle1"></div>
+  <div class="back__circle2"></div>
+  <div class="back__circle3"></div>
+  <h1 class="works__h1">Работы</h1>
   <div class="wrapper">
     <div class="content">
-      <div class="container">
+      <!-- TODO: Надо сделать без .container -->
+      <div class="">
         <main class="projects">
           <div class="projects-left">
             <div
@@ -82,7 +83,7 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- <section class="abilities">
   <h2 class="abilities__h">WE CAN</h2>
