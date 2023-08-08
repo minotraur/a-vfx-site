@@ -22,6 +22,7 @@ import SwiperCore, {
   Autoplay,
   Thumbs,
   Controller,
+  EffectFade,
 } from 'swiper';
 
 // install Swiper components
@@ -35,6 +36,7 @@ SwiperCore.use([
   Autoplay,
   Thumbs,
   Controller,
+  EffectFade,
 ]);
 
 @Component({
@@ -49,9 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   videos = [
     // { url: 'assets/videos/1.mp4', text: 'TEXT 1' },
-    { url: 'assets/videos/2.mp4', text: 'Dragon', link: '' },
     { url: 'assets/videos/3.mp4', text: 'Черновик', link: '' },
-    { url: 'assets/videos/4.mp4', text: 'Робо', link: '' },
     { url: 'assets/videos/5.mp4', text: 'Квакерсы', link: '' },
     { url: 'assets/videos/6.mp4', text: 'Кровавый хоккей', link: '' },
     // Добавьте дополнительные видео, указав их URL

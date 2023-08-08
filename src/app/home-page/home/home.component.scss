@@ -4,6 +4,14 @@ $text-color-orange: #f7941d;
 $transition: 1.25s cubic-bezier(0.2, 0.5, 0, 1);
 $transition-cursor: 2s cubic-bezier(0.05, 0.5, 0, 1);
 
+// Color pallete //
+$text: #e9e8e7;
+$background: #141414;
+$primary: #f7941d;
+$secondary: #18191b;
+$accent: #847b84;
+//--------------//
+
 ::ng-deep {
   .swiper-button-prev,
   .swiper-button-next {
@@ -32,72 +40,62 @@ $transition-cursor: 2s cubic-bezier(0.05, 0.5, 0, 1);
 }
 
 .header {
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: $background;
   height: 100vh;
+  position: relative;
+
+  .slider {
+    width: 100%;
+    height: 100%;
+    padding: 90px 15px 15px 15px;
+  }
 
   swiper {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
 
     .slide-content {
       position: relative;
+      width: 100%;
+      height: 100%;
 
       .slide-content__textblock {
         position: absolute;
-        width: calc($index * 15);
-        height: calc($index * 10);
+        width: max-content;
+
         bottom: calc($index * 2);
         left: calc($index * 2);
         z-index: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 40px;
+        justify-content: flex-end;
+        align-items: flex-start;
 
         a {
           text-decoration: none;
         }
+
         .textblock__h {
           font-weight: 900;
-          font-size: calc($index * 1.5);
           margin: 0;
           text-align: center;
           margin: 0;
-          font-family: "OoM";
+          font-family: "CabinetGrotesk-Variable", sans-serif;
           font-size: calc($index * 2);
           color: rgb(255, 255, 255);
           filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.3));
         }
+      }
 
-        .textblock__desc {
-          margin: 0;
-          margin-top: 15px;
-          font-size: calc($index * 0.5);
-          color: #ffa500;
-        }
+      .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.8);
       }
     }
-
-    .video {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      filter: brightness(0.5);
-    }
-  }
-
-  .swiper-container {
-    width: 100%;
-    height: 300px;
-    margin: 50px auto;
-  }
-
-  .swiper-slide {
-    background: #f1f1f1;
-    color: #000;
-    text-align: center;
-    line-height: 300px;
   }
 }
 
