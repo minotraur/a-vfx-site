@@ -1,75 +1,122 @@
-<header>
-  <div class="mainMenu">
-    <div class="container">
-      <div class="row">
-        <nav class="mainMenu__bar">
-          <div class="mainMenu__logo">
-            <a routerLink="">
+<div class="header">
+  <div class="container-large">
+    <div class="header__inner">
+      <div class="grid when">
+        <div class="header__logo">
+          <a routerLink="" class="header__logo-link">
+            <div class="header_logo-inner">
               <img
                 src="assets/imgs/logo.png"
                 alt="Asymmetric logo"
                 height="40"
               />
-            </a>
-          </div>
-          <div
-            class="mainMenu__content container"
-            [ngClass]="{ openNavBar: isNavBarOpen, active: isNavBarOpen }"
-          >
-            <div class="mainMenu__menu">
-              <ul class="menu">
-                <li class="menu__item">
-                  <a routerLink="/about" routerLinkActive="active">О студии</a>
-                </li>
-                <div class="menu__spacer"></div>
-
-                <li class="menu__item">
-                  <a routerLink="/works" routerLinkActive="active">Работы</a>
-                </li>
-                <div class="menu__spacer"></div>
-
-                <li class="menu__item">
-                  <a routerLink="/blog" routerLinkActive="active">Блог</a>
-                </li>
-                <div class="menu__spacer"></div>
-
-                <li class="menu__item">
-                  <a routerLink="/contact" routerLinkActive="active"
-                    >Контакты</a
-                  >
-                </li>
-                <div class="menu__spacer"></div>
-              </ul>
             </div>
-            <div class="mainMenu__lang">
-              <ul class="menu">
-                <li class="menu__item">
-                  <a
-                    href="https://a-vfx.com/en/"
-                    class="menu__item__a"
-                    routerLinkActive="active"
-                  >
-                    <span class="menu__item__span">EN</span></a
-                  >
-                </li>
-                <li class="menu__item">
-                  <a
-                    href="https://a-vfx.com/en/"
-                    class="menu__item__a"
-                    routerLinkActive="active"
-                  >
-                    <span class="menu__item__span">RU</span></a
-                  >
-                </li>
-              </ul>
+          </a>
+        </div>
+        <div class="header__menu">
+          <ul role="list" class="header__menu-list">
+            <li class="header__menu-item">
+              <a
+                routerLink="/works"
+                routerLinkActive="active"
+                class="header__menu-link"
+                >Work</a
+              >
+            </li>
+            <li class="header__menu-item">
+              <a
+                routerLink="/blog"
+                routerLinkActive="active"
+                class="header__menu-link"
+                >Blog</a
+              >
+            </li>
+            <li class="header__menu-item">
+              <a
+                routerLink="/about"
+                routerLinkActive="active"
+                class="header__menu-link"
+                >About</a
+              >
+            </li>
+            <li class="header__menu-item">
+              <a
+                routerLink="/contact"
+                routerLinkActive="active"
+                class="header__menu-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <button class="header__menu-toggle" (click)="toggleNavBar()">
+            <div class="header__menu-icon">
+              <i class="ri-menu-3-line"></i>
             </div>
-          </div>
-
-          <div class="mainMenu__hamburger" (click)="toggleNavBar()">
-            <i class="ri-menu-3-line"></i>
-          </div>
-        </nav>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</header>
+
+  <div
+    class="modals"
+    [ngClass]="{ openNavBar: isNavBarOpen, active: isNavBarOpen }"
+  >
+    <div class="modal-nav">
+      <div class="modal-nav__inner">
+        <div class="modal-nav__content">
+          <div class="modal-nav__menu">
+            <a
+              routerLink="/about"
+              routerLinkActive="active"
+              class="modal-nav__menu-link"
+            >
+              <div>About</div>
+            </a>
+
+            <a
+              routerLink="/works"
+              routerLinkActive="active"
+              class="modal-nav__menu-link"
+            >
+              <div>Work</div>
+            </a>
+
+            <a
+              routerLink="/blog"
+              routerLinkActive="active"
+              class="modal-nav__menu-link"
+            >
+              <div>Blog</div>
+            </a>
+
+            <a
+              routerLink="/contact"
+              routerLinkActive="active"
+              class="modal-nav__menu-link"
+            >
+              <div>Contact</div>
+            </a>
+          </div>
+          <div class="modal-nav_info">
+            <a
+              href="https://www.instagram.com/asymmetric_vfx/"
+              target="_blank"
+              class="modal-nav__info-link"
+            >
+              <div>Instagram</div>
+            </a>
+
+            <a
+              href="https://vimeo.com/asymmetricvfx"
+              target="_blank"
+              class="modal-nav__info-link"
+            >
+              <div>Vimeo</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
