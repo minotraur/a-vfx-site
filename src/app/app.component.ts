@@ -34,6 +34,7 @@ export class AppComponent {
       content: '#smooth-content',
       wrapper: 'app-root',
       smooth: 1.1,
+      effects: true,
     });
   }
 

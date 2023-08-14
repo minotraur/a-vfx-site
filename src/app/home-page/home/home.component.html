@@ -1,4 +1,4 @@
-<div class="header">
+<header class="header">
   <div class="slider">
     <swiper
       [slidesPerView]="1"
@@ -29,4 +29,115 @@
       ></ng-template>
     </swiper>
   </div>
-</div>
+</header>
+
+<section class="work">
+  <h2 class="work__h">Work</h2>
+
+  <div class="wrapper">
+    <div class="left-content">
+      <ng-container *ngFor="let work of works | slice : 0 : 4; let i = index">
+        <div class="work__card" *ngIf="i % 2 !== 0; else oddItem">
+          <div class="card__header">
+            <img src="{{ work.image }}" alt="" />
+          </div>
+          <div class="card__text">
+            <div class="info">
+              {{ work.description }}
+            </div>
+          </div>
+        </div>
+        <ng-template #oddItem></ng-template>
+      </ng-container>
+    </div>
+
+    <div class="right-content">
+      <ng-container *ngFor="let work of works | slice : 0 : 4; let i = index">
+        <div class="work__card" *ngIf="i % 2 === 0; else notOddItem">
+          <div class="card__header">
+            <img src="{{ work.image }}" alt="" />
+          </div>
+          <div class="card__text">
+            <div class="info">
+              {{ work.description }}
+            </div>
+          </div>
+        </div>
+        <ng-template #notOddItem></ng-template>
+      </ng-container>
+    </div>
+
+    <ng-container></ng-container>
+  </div>
+</section>
+
+<section class="team">
+  <h2 class="team__h">About Team</h2>
+  <div class="wrapper">
+    <div class="left-content">
+      <ng-container *ngFor="let work of works | slice : 0 : 2; let i = index">
+        <div class="work__card" *ngIf="i % 2 !== 0; else oddItem">
+          <div class="card__header">
+            <img src="assets/imgs/man.jpg" alt="" />
+          </div>
+          <div class="card__text">
+            <div class="info">Man</div>
+            <div class="info">Atrist</div>
+          </div>
+        </div>
+        <ng-template #oddItem></ng-template>
+      </ng-container>
+    </div>
+
+    <div class="right-content">
+      <ng-container *ngFor="let work of works | slice : 0 : 4; let i = index">
+        <div class="work__card" *ngIf="i % 2 === 0; else notOddItem">
+          <div class="card__header">
+            <img src="assets/imgs/man.jpg" alt="" />
+          </div>
+          <div class="card__text">
+            <div class="info">Man</div>
+            <div class="info">Atrist</div>
+          </div>
+        </div>
+        <ng-template #notOddItem></ng-template>
+      </ng-container>
+    </div>
+
+    <ng-container></ng-container>
+  </div>
+</section>
+
+<section class="partners">
+  <h2 class="team__h">Partners</h2>
+  <div class="wrapper" #draggableItem>
+    <img src="assets/imgs/vimeo_logo.png" alt="" />
+    <img src="assets/imgs/facebook_logo.png" alt="" />
+    <img src="assets/imgs/instagram_logo.png" alt="" />
+    <img src="assets/imgs/youtube_logo.png" alt="" />
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrapper">
+    <img src="assets/imgs/logo.png" alt="" height="40" />
+
+    <div class="text-block">
+      <p class="info">
+        The studio "Asymmetry" (A-VFX) specializes in the production of 3D
+        animation and visual effects for feature films and TV series. The main
+        office is located in Moscow.
+      </p>
+      <p class="text">All rights reserved™®©</p>
+    </div>
+
+    <div class="social-block">
+      <p class="info">
+        The studio "Asymmetry" (A-VFX) specializes in the production of 3D
+        animation and visual effects for feature films and TV series. The main
+        office is located in Moscow.
+      </p>
+      <p class="text">All rights reserved™®©</p>
+    </div>
+  </div>
+</footer>

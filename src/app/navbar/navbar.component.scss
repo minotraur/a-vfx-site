@@ -183,6 +183,11 @@ $text-color-orange: #f7941d;
           color: white;
           font-weight: 600;
           font-size: calc($index * 3);
+          transition: 0.3s;
+        }
+        .modal-nav__menu-link:hover {
+          transition: 0.3s;
+          color: $text-color-orange;
         }
       }
     }
@@ -199,6 +204,11 @@ $text-color-orange: #f7941d;
         color: white;
         font-weight: 600;
         font-size: calc($index * 1.5);
+        transition: 0.3s;
+      }
+      .modal-nav__info-link:hover {
+        transition: 0.3s;
+        color: $text-color-orange;
       }
     }
   }

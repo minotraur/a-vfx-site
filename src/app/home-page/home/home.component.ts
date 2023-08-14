@@ -1,9 +1,12 @@
 import {
   Component,
+  ElementRef,
   HostBinding,
+  HostListener,
   Inject,
   OnDestroy,
   OnInit,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 import { gsap } from 'gsap';
@@ -11,6 +14,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DOCUMENT } from '@angular/common';
 import { GetDataService, Project } from 'src/app/home-page/get-data.service';
 import { SwiperComponent } from 'swiper/angular';
+import { Draggable } from 'gsap/all'; // Обратите внимание на "all"
 
 import SwiperCore, {
   Navigation,
@@ -24,6 +28,7 @@ import SwiperCore, {
   Controller,
   EffectFade,
 } from 'swiper';
+import { Observable } from 'rxjs';
 
 // install Swiper components
 SwiperCore.use([
@@ -58,6 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ];
 
   projects!: Project[];
+  works!: Project[];
 
   thumbs: any;
 
@@ -69,134 +75,102 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.
     this.projects = this.projectService.getProjects();
+
+    this.works = this.projectService.getProjects();
   }
 
+  @ViewChild('draggableItem', { static: true }) draggableItemRef!: ElementRef;
+
   ngAfterViewInit() {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
-      '.works .works__h1',
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: '.works__h1',
-          start: '-50',
-          end: '820',
-          scrub: true,
+    gsap.registerPlugin(ScrollTrigger, Draggable);
+
+    if (ScrollTrigger.isTouch !== 1) {
+      gsap.fromTo(
+        '.work .work__h',
+        { opacity: 0, x: 1000 },
+        {
+          opacity: 1,
+          x: 0,
+          scrollTrigger: {
+            trigger: '.work__h',
+            start: '-50',
+            end: '820',
+            scrub: true,
+          },
+        }
+      );
+
+      const itemsL = gsap.utils.toArray('.left-content .work__card');
+      itemsL.forEach((item: any) =>
+        gsap.fromTo(
+          item,
+          { x: -120, opacity: 0 },
+          {
+            opacity: 1,
+            x: 0,
+            scrollTrigger: {
+              trigger: item,
+              scrub: true,
+            },
+          }
+        )
+      );
+      const itemsR = gsap.utils.toArray('.right-content .work__card');
+      itemsR.forEach((item: any) =>
+        gsap.fromTo(
+          item,
+          { x: 120, opacity: 0 },
+          {
+            opacity: 1,
+            x: 0,
+            scrollTrigger: {
+              trigger: item,
+              scrub: true,
+            },
+          }
+        )
+      );
+      gsap.fromTo(
+        '.team .team__h',
+        { opacity: 0, x: 1000 },
+        {
+          opacity: 1,
+          x: 0,
+          scrollTrigger: {
+            trigger: '.team__h',
+            scrub: true,
+          },
+        }
+      );
+
+      Draggable.create(this.draggableItemRef.nativeElement, {
+        type: 'x,y',
+        edgeResistance: 0.65,
+        bounds: '.partners',
+        onDragStart: () => {
+          // Действия при начале перетаскивания
         },
-      }
-    );
-    gsap.fromTo(
-      '.works .back__circle1',
-      { x: -100, y: -200 },
-      {
-        x: 0,
-        y: 0,
-        scrollTrigger: {
-          trigger: '.back__circle1',
-          start: '-50',
-          end: '820',
-          scrub: true,
+        onDrag: () => {
+          // Действия во время перетаскивания
         },
-      }
-    );
-    gsap.fromTo(
-      '.works .back__circle2',
-      { x: 1000, y: 500 },
-      {
-        x: 0,
-        y: 0,
-        scrollTrigger: {
-          trigger: '.back__circle1',
-          start: '-50',
-          end: '820',
-          scrub: true,
+        onDragEnd: () => {
+          // Действия при окончании перетаскивания
         },
-      }
-    );
-    //   // gsap.fromTo(
-    //   //   '.works .works__h1',
-    //   //   { x: 500, opacity: 0 },
-    //   //   {
-    //   //     opacity: 1,
-    //   //     x: 0,
-    //   //     delay: 5,
-    //   //     scrollTrigger: {
-    //   //       trigger: '.works__h1',
-    //   //       start: '-100',
-    //   //       end: '1000',
-    //   //       scrub: true,
-    //   //     },
-    //   //   }
-    //   // );
-    //   // gsap.fromTo(
-    //   //   '.abilities .abilities__h',
-    //   //   { x: 500, opacity: 0 },
-    //   //   {
-    //   //     opacity: 1,
-    //   //     x: 120,
-    //   //     delay: 5,
-    //   //     scrollTrigger: {
-    //   //       trigger: '.abilities__h',
-    //   //       scrub: true,
-    //   //     },
-    //   //   }
-    //   // );
-    //   // gsap.fromTo(
-    //   //   '.team .team__h',
-    //   //   { x: 500, opacity: 0 },
-    //   //   {
-    //   //     opacity: 1,
-    //   //     x: 0,
-    //   //     scrollTrigger: {
-    //   //       trigger: '.team__h',
-    //   //       scrub: true,
-    //   //     },
-    //   //   }
-    //   // );
-    //   // gsap.fromTo(
-    //   //   '.partners .partners__h',
-    //   //   { x: 500, opacity: 0 },
-    //   //   {
-    //   //     opacity: 1,
-    //   //     x: 0,
-    //   //     scrollTrigger: {
-    //   //       trigger: '.partners__h',
-    //   //       scrub: true,
-    //   //     },
-    //   //   }
-    //   // );
-    //   // const itemsL = gsap.utils.toArray('.projects-left .project__card');
-    //   // itemsL.forEach((item: any) =>
-    //   //   gsap.fromTo(
-    //   //     item,
-    //   //     { x: -120, opacity: 0 },
-    //   //     {
-    //   //       opacity: 1,
-    //   //       x: 0,
-    //   //       scrollTrigger: {
-    //   //         trigger: item,
-    //   //         scrub: true,
-    //   //       },
-    //   //     }
-    //   //   )
-    //   // );
-    //   // const itemsR = gsap.utils.toArray('.projects-right .project__card');
-    //   // itemsR.forEach((item: any) =>
-    //   //   gsap.fromTo(
-    //   //     item,
-    //   //     { x: 120, opacity: 0 },
-    //   //     {
-    //   //       opacity: 1,
-    //   //       x: 0,
-    //   //       scrollTrigger: {
-    //   //         trigger: item,
-    //   //         scrub: true,
-    //   //       },
-    //   //     }
-    //   //   )
-    //   // );
+      });
+
+      gsap.fromTo(
+        '.partners .partners__h',
+        { opacity: 0, x: 1000 },
+        {
+          opacity: 1,
+          x: 0,
+          scrollTrigger: {
+            trigger: '.partners__h',
+            scrub: true,
+          },
+        }
+      );
+    }
   }
 
   ngOnDestroy(): void {}
