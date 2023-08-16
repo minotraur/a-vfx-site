@@ -31,6 +31,68 @@
   </div>
 </header>
 
+<section id="cases" class="section section-small">
+  <div class="cases">
+    <div class="case-main" *ngFor="let work of works ">
+      <div class="case-main-container">
+        <div class="case-main-preview">
+          <div style="opacity: 1; transform: none">
+            <img
+              alt="img"
+              loading="lazy"
+              decoding="async"
+              data-nimg="1"
+              class="case-main-preview-image"
+              src="{{ work.image }}"
+              style="color: transparent; object-fit: cover"
+            />
+          </div>
+        </div>
+        <div class="case-main-content">
+          <div class="case-main-title">
+            <div style="opacity: 1; transform: none">{{ work.name }}</div>
+          </div>
+          <div class="case-main-description">
+            <div style="opacity: 1; transform: none">
+              {{ work.description }}
+            </div>
+          </div>
+          <div class="case-main-text">
+            <div style="opacity: 1; transform: none">
+              {{ work.more_text }}
+            </div>
+          </div>
+          <div class="case-main-tags">
+            <div style="opacity: 1; transform: none">
+              <div class="space space-horizontal" style="gap: 0.5em">
+                <div class="tag">Figma</div>
+                <div class="tag">Angular</div>
+                <div class="tag">React Native</div>
+                <div class="tag">Java</div>
+              </div>
+            </div>
+          </div>
+          <div class="case-main-actions">
+            <div style="opacity: 1; transform: none">
+              <button
+                type="button"
+                class="button-circle button-circle-primary button-circle-medium"
+              >
+                <div class="button-circle-container">
+                  <div class="button-circle-icon-wrapper">
+                    <span class="button-circle-icon">
+                      <i class="ri-add-line" style="color: white"></i>
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="work">
   <h2 class="work__h">Work</h2>
 

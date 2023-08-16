@@ -4,6 +4,7 @@ export interface Project {
   id: number;
   name: string;
   description: string;
+  more_text: string;
   image: string;
 }
 
@@ -11,55 +12,73 @@ export const MOCK_PROJECTS: Project[] = [
   {
     id: 1,
     name: 'Союз',
-    description: 'Союз спасения',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/souz.jpg',
   },
   {
     id: 2,
     name: 'Robo',
-    description: 'Robo',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/robo.jpg',
   },
   {
     id: 3,
     name: '2.0',
-    description: 'Film 2.0',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/2.jpg',
   },
   {
     id: 4,
     name: 'Elki 2',
-    description: 'Elki 2',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/elki.jpg',
   },
   {
     id: 5,
     name: 'Wonder world',
-    description: 'Wonder world',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/wonder.jpg',
   },
   {
     id: 6,
     name: 'Para from future',
-    description: 'Para from future',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/para.jpg',
   },
   {
     id: 7,
     name: 'Steel rain',
-    description: 'Steel rain',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/steel.jpg',
   },
   {
     id: 8,
     name: 'Masha and the Bear',
-    description: 'Masha and the Bear',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/masha.jpg',
   },
   {
     id: 9,
     name: 'Legend №17',
-    description: 'Legend №17',
+    description: 'Описание',
+    more_text:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, enim temporibus laudantium, esse est officiis optio consequuntur sit suscipit dicta ipsa rerum a accusamus nihil pariatur fuga repudiandae! Incidunt, cum.',
     image: 'assets/imgs/legend17.jpg',
   },
 ];

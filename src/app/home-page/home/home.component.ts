@@ -19,7 +19,6 @@ import { Draggable } from 'gsap/all'; // Обратите внимание на 
 import SwiperCore, {
   Navigation,
   Pagination,
-  Scrollbar,
   A11y,
   Virtual,
   Zoom,
@@ -29,12 +28,12 @@ import SwiperCore, {
   EffectFade,
 } from 'swiper';
 import { Observable } from 'rxjs';
+import Scrollbar from 'smooth-scrollbar';
 
 // install Swiper components
 SwiperCore.use([
   Navigation,
   Pagination,
-  Scrollbar,
   A11y,
   Virtual,
   Zoom,
@@ -85,87 +84,41 @@ export class HomeComponent implements OnInit, OnDestroy {
     gsap.registerPlugin(ScrollTrigger, Draggable);
 
     if (ScrollTrigger.isTouch !== 1) {
+      const cases = gsap.utils.toArray('.section .cases .case-main');
+      cases.forEach((item: any) =>
+        gsap.fromTo(
+          item,
+          { opacity: 1 },
+          {
+            opacity: 1,
+            scrollTrigger: {
+              trigger: item,
+              scrub: true,
+            },
+          }
+        )
+      );
+
       gsap.fromTo(
         '.work .work__h',
-        { opacity: 0, x: 1000 },
+        { opacity: 0 },
         {
           opacity: 1,
-          x: 0,
           scrollTrigger: {
             trigger: '.work__h',
-            start: '-50',
-            end: '820',
             scrub: true,
+            markers: true,
           },
         }
       );
 
-      const itemsL = gsap.utils.toArray('.left-content .work__card');
-      itemsL.forEach((item: any) =>
-        gsap.fromTo(
-          item,
-          { x: -120, opacity: 0 },
-          {
-            opacity: 1,
-            x: 0,
-            scrollTrigger: {
-              trigger: item,
-              scrub: true,
-            },
-          }
-        )
-      );
-      const itemsR = gsap.utils.toArray('.right-content .work__card');
-      itemsR.forEach((item: any) =>
-        gsap.fromTo(
-          item,
-          { x: 120, opacity: 0 },
-          {
-            opacity: 1,
-            x: 0,
-            scrollTrigger: {
-              trigger: item,
-              scrub: true,
-            },
-          }
-        )
-      );
       gsap.fromTo(
         '.team .team__h',
-        { opacity: 0, x: 1000 },
+        { opacity: 0 },
         {
           opacity: 1,
-          x: 0,
           scrollTrigger: {
             trigger: '.team__h',
-            scrub: true,
-          },
-        }
-      );
-
-      Draggable.create(this.draggableItemRef.nativeElement, {
-        type: 'x,y',
-        edgeResistance: 0.65,
-        bounds: '.partners',
-        onDragStart: () => {
-          // Действия при начале перетаскивания
-        },
-        onDrag: () => {
-          // Действия во время перетаскивания
-        },
-        onDragEnd: () => {
-          // Действия при окончании перетаскивания
-        },
-      });
-
-      gsap.fromTo(
-        '.partners .partners__h',
-        { opacity: 0, x: 1000 },
-        {
-          opacity: 1,
-          x: 0,
-          scrollTrigger: {
-            trigger: '.partners__h',
             scrub: true,
           },
         }

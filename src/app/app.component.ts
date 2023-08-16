@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ScrollSmoother from 'src/js/ScrollSmoother.min.js';
+import Scrollbar from 'smooth-scrollbar';
 
 @Component({
   selector: 'app-root',
@@ -30,12 +30,33 @@ export class AppComponent {
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-    this.smoother = ScrollSmoother.create({
-      content: '#smooth-content',
-      wrapper: 'app-root',
-      smooth: 1.1,
-      effects: true,
-    });
+
+    // const scroller = document.querySelector('app-root') as HTMLElement;
+
+    // const bodyScrollBar = Scrollbar.init(scroller, {
+    //   damping: 0.1,
+    //   delegateTo: document,
+    //   alwaysShowTracks: true,
+    // });
+
+    // ScrollTrigger.scrollerProxy('.scroller', {
+    //   scrollTop(value) {
+    //     if (arguments.length) {
+    //       bodyScrollBar.scrollTop = value!;
+    //     }
+    //     return bodyScrollBar.scrollTop;
+    //   },
+    // });
+
+    // bodyScrollBar.addListener(ScrollTrigger.update);
+
+    // ScrollTrigger.defaults({ scroller: scroller });
+    // this.smoother = ScrollSmoother.create({
+    //   content: '#smooth-content',
+    //   wrapper: 'app-root',
+    //   smooth: 1.1,
+    //   effects: true,
+    // });
   }
 
   initialScrollAnimations(): void {
