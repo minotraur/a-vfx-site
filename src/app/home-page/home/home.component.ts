@@ -27,8 +27,6 @@ import SwiperCore, {
   Controller,
   EffectFade,
 } from 'swiper';
-import { Observable } from 'rxjs';
-import Scrollbar from 'smooth-scrollbar';
 
 // install Swiper components
 SwiperCore.use([
@@ -58,7 +56,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     { url: 'assets/videos/3.mp4', text: 'Черновик', link: '' },
     { url: 'assets/videos/5.mp4', text: 'Квакерсы', link: '' },
     { url: 'assets/videos/6.mp4', text: 'Кровавый хоккей', link: '' },
-    // Добавьте дополнительные видео, указав их URL
+  ];
+
+  partners = [
+    { url: 'assets/imgs/partners/BBDO_Logo.png', link: '' },
+    { url: 'assets/imgs/partners/big.png', link: '' },
+    { url: 'assets/imgs/partners/ddb.png', link: '' },
+    { url: 'assets/imgs/partners/dejavu_logo.png', link: '' },
+    {
+      url: 'assets/imgs/partners/dreambox-logo.png',
+      link: '',
+    },
+    { url: 'assets/imgs/partners/impact_logo.png', link: '' },
+    { url: 'assets/imgs/partners/Leo_Burnett.png', link: '' },
+    { url: 'assets/imgs/partners/Ogilvy_Logo.png', link: '' },
+    { url: 'assets/imgs/partners/publics.png', link: '' },
+    { url: 'assets/imgs/partners/rfg_logo.png', link: '' },
+    { url: 'assets/imgs/partners/TBWA-logo.png', link: '' },
+    { url: 'assets/imgs/partners/v&r.png', link: '' },
   ];
 
   projects!: Project[];
@@ -69,7 +84,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private projectService: GetDataService,
     @Inject(DOCUMENT) private document: Document
-  ) {}
+  ) {
+    
+  }
 
   ngOnInit() {
     // Call the getProjects() method of the ProjectService to fetch the data.
